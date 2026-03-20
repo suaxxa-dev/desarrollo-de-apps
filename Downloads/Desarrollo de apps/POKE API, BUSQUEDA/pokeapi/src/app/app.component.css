@@ -1,0 +1,77 @@
+/* Fondo general */
+body{
+  background: linear-gradient(135deg, #ffcb05, #3b4cca);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Título */
+h1{
+  margin-top: 40px;
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 6px black;
+}
+
+/* Buscador */
+input{
+  padding: 12px;
+  width: 220px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Botón */
+button{
+  padding: 12px 18px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover{
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Tarjeta del pokemon */
+div{
+  margin-top: 30px;
+}
+
+/* Card */
+div[ng-reflect-ng-if]{
+  background: white;
+  width: 250px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Nombre */
+h2{
+  text-transform: capitalize;
+  color: #333;
+}
+
+/* Imagen */
+img{
+  width: 150px;
+  transition: transform 0.3s;
+}
+
+img:hover{
+  transform: scale(1.15);
+}

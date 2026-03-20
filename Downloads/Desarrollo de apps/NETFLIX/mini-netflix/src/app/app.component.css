@@ -1,0 +1,234 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:host {
+  --netflix-red: #E50914;
+  --netflix-black: #141414;
+  --netflix-dark-gray: #181818;
+  --text-white: #ffffff;
+  --text-gray: #b3b3b3;
+}
+
+.netflix-container {
+  background-color: var(--netflix-black);
+  color: var(--text-white);
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 0 4%;
+  overflow-x: hidden;
+}
+
+/* --- NAVBAR ESTILO NETFLIX --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--netflix-black);
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--netflix-red);
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.btn-nav {
+  background-color: var(--netflix-red);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-nav:hover {
+  background-color: #b9090b;
+}
+
+/* --- SECCIONES DE CATEGORÍAS --- */
+.categoria-section {
+  margin-bottom: 40px;
+}
+
+.titulo-categoria {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #e5e5e5;
+}
+
+/* --- CARRUSEL DE IMÁGENES PEQUEÑAS --- */
+.carousel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0 25px 0;
+  scrollbar-width: none; /* Oculta scroll en Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Oculta scroll en Chrome/Safari */
+}
+
+.movie-card {
+  min-width: 160px; /* Tamaño más pequeño */
+  max-width: 160px;
+  position: relative;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2/3; /* Proporción de póster */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Overlay con el botón de VER al hacer hover */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 4px;
+}
+
+.movie-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.btn-card {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 15px;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* --- PANTALLA DE DETALLE --- */
+.detalle-container {
+  padding-top: 20px;
+  animation: fadeIn 0.5s ease;
+  width: 400px;
+  height: 400px;
+}
+
+.btn-volver {
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-volver:hover {
+  color: white;
+}
+
+.detalle-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.img-grande {
+  width: 300px; /* Imagen de detalle un poco más controlada */
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.info-texto h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+}
+
+.badge {
+  background-color: #333;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  color: #46d369; /* Color verde tipo coincidencia de Netflix */
+  font-weight: bold;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 20px 0;
+}
+
+.btn-accion-ver {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-accion-ver:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- SECCIÓN MIS PELÍCULAS VISTAS --- */
+.vistas-storage {
+  border-top: 1px solid #333;
+  padding-top: 40px;
+}
+
+.color-red {
+  color: var(--netflix-red);
+}
+
+.vista-pequena {
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.titulo-vista {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 5px;
+  color: var(--text-gray);
+}
+
+.empty-msg {
+  color: var(--text-gray);
+  font-style: italic;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

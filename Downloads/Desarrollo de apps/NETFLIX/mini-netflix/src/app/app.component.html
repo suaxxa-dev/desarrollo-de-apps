@@ -1,0 +1,72 @@
+<div class="netflix-container">
+  <nav class="navbar">
+    <div class="logo">NETFLIX</div>
+    <a href="#mis-vistas" class="btn-nav">Mis Películas</a>
+  </nav>
+
+  @if (peliculaSeleccionada) {
+    <div class="detalle-container">
+      <button (click)="volver()" class="btn-volver">← Regresar al catálogo</button>
+      
+      <div class="detalle-layout">
+        <div class="poster-grande">
+          <img [src]="peliculaSeleccionada.imagen" [alt]="peliculaSeleccionada.titulo">
+        </div>
+        
+        <div class="info-texto">
+          <h1>{{ peliculaSeleccionada.titulo }}</h1>
+          <span class="badge">{{ peliculaSeleccionada.categoria }}</span>
+          <p class="descripcion">{{ peliculaSeleccionada.descripcion }}</p>
+          
+          <button (click)="guardar(peliculaSeleccionada)" class="btn-accion-ver">
+            ▶ VER AHORA
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+
+  @else {
+    <div class="catalog-container">
+      
+      @for (cat of ['Comedia', 'Terror', 'Romance']; track cat) {
+        <section class="categoria-section">
+          <h2 class="titulo-categoria">{{ cat }}</h2>
+          
+          <div class="carousel">
+            @for (peli of peliculas; track peli.titulo) {
+              @if (peli.categoria === cat) {
+                <div class="movie-card">
+                  <img [src]="peli.imagen" [alt]="peli.titulo">
+                  <div class="card-overlay">
+                    <button (click)="verDetalle(peli)" class="btn-card">VER</button>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+        </section>
+      }
+
+      <section id="mis-vistas" class="categoria-section vistas-storage">
+        <h2 class="titulo-categoria color-red">Mi Lista: Películas Vistas</h2>
+        
+        <div class="carousel">
+          @for (vista of misPeliculas; track vista.titulo) {
+            <div class="movie-card vista-pequena">
+              <img [src]="vista.imagen" [alt]="vista.titulo">
+              <p class="titulo-vista">{{ vista.titulo }}</p>
+            </div>
+          } @empty {
+            <p class="empty-msg">Aún no has visto ninguna película. ¡Dale a "Ver" en el detalle!</p>
+          }
+        </div>
+      </section>
+    </div>
+  }
+
+  <footer class="footer">
+    <p>&copy; 2026 Parcial Netflix - Angular Junior Developer</p>
+  </footer>
+</div>
+<router-outlet />

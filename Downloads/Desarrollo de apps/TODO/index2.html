@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <h1>To do</h1>
+    <form onsubmit="agg(event)">
+      <label>TAREA</label>
+      <input id="tarea" type="text" placeholder="Tarea a realizar" required />
+
+
+
+      <br /><br />
+      <button>Agregar</button>
+    </form>
+
+    <ul id="lista"></ul>
+
+    <script>
+      function agg(e) {
+        e.preventDefault();
+
+        const texto = document.getElementById("tarea").value;
+
+        const li = document.createElement("li");
+        li.textContent = texto;
+
+        document.getElementById("lista").appendChild(li);
+
+        document.getElementById("tarea").value = "";
+      }
+    </script>
+
+  </body>
+</html>

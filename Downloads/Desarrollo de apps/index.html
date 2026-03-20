@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulario</h1>
+    <form id="form_suma">
+      <label>Numero 1</label>
+      <input type="text" id="num1" placeholder="numero 1" required />
+
+      <br /><br />
+
+      <label>Numero 2</label>
+      <input type="text" id="num2" placeholder="numero 2" required />
+
+      <br />
+
+      <button type="button" onclick="suma(event)">Sumar</button>
+    </form>
+
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+      function suma(e) {
+        e.preventDefault();
+
+        const num1 = Number(document.getElementById("num1").value);
+        const num2 = Number(document.getElementById("num2").value);
+
+        const resultado = num1 + num2;
+
+        document.getElementById("resultado").textContent = resultado;
+      }
+    </script>
+  </body>
+</html>

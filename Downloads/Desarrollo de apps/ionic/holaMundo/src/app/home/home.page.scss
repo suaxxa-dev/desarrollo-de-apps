@@ -1,0 +1,52 @@
+#container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#container strong {
+  font-size: 22px;
+  color: #3880ff;
+}
+
+#container p {
+  font-size: 16px;
+  color: #666;
+}
+
+#holaMundo {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#holaMundo h1 {
+  background-color: #3880ff; 
+  color: white;
+  font-size: 32px;
+  color: #222;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 15px 35px;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow:  0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+ion-content {
+  --background: #f4f5f8;
+}
+
+ion-title {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+hr {
+  margin: 15px 0;
+  border: 1px solid #ccc;
+}
